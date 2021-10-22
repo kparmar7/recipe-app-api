@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  webe:
+    build:
+      context: .
+    ports:
+      - 8765:9876
+    volumes:       #when we change anything in web ,that automatically reflect in container and no need to restart docker for the change which is updated
+      - ./appp:/web      #docker-compose run  webe sh -c "django-admin startproject recipe /web"
+    image: apppudemy:webudemy      #image name:root folder name 
+    container_name: UDEMY1
+    command: >            #0.0.0.0 is available for all IP addresses run on docker container
+      sh -c "python manage.py runserver 0.0.0.0:9876"      
+      # sh -c "python manage.py runserver 127.0.0.1:9876"  
+
+     
+    
