@@ -3,4 +3,4 @@ docker build --tag udemy1 .
 
 docker-compose build
 
-docker-compose run {service name} webe sh -c "django-admin startapp appp ."
+docker-compose run  webe sh -c "django-admin startproject recipe /web"
